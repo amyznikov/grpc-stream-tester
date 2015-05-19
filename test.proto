@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package tester;
+
+service StreamTester {
+  rpc GetStream (StreamRequest) returns (stream TestEvent) {}
+}
+
+message StreamRequest {
+}
+
+message TestEvent {
+  string event_name = 1;
+}
